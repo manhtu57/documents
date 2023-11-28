@@ -36,6 +36,9 @@
 - [ ] Cached response API if needed
 - [ ] Using transaction when handle more query CRUD
 
+### Symfony
+- [ ] Using `Attribute` instead of `Annotation`
+
 ### Javascript
 - [ ] Use let, const instead of var
 - [ ] Aware floating point when cast others type to number (with JS use Number() to reserve the floating point)
