@@ -63,6 +63,7 @@
 - [ ] Use TINYINT for boolean only or for integer which only have 1,0
 - [ ] Check if column is existed before adding/deleting column
 - [ ] Avoid using OR in WHERE clause
+- [ ] Avoid N+1 Query
 
 
 ## 🐞 Testing
