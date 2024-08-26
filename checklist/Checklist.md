@@ -26,6 +26,8 @@
 
 
 ### PHP
+- [ ] **(NEW)** Using short echo syntax `<?= ?>` in **PHP 5.6** greater, otherwise using standard echo
+- [ ] **(NEW)** Strict mode when using `in_array()` function
 - [ ] Using `NOWDOC` or  `single quote` instead of `double quote`, `HEREDOC`
 - [ ] Using PHP Doc for class/function/variable with [standard](https://2tbsp.com/sites/default/files/articles/phpdoc_cheatsheet.pdf)
 - [ ] Using bcmath of PHP to avoid floating-point when calculate numbers
