@@ -1,0 +1,94 @@
+---
+description: 
+globs: *.tsx,*.ts,*.jsx,*.js
+alwaysApply: false
+---
+# React Coding Rules (JavaScript & TypeScript)
+
+## 1. General Rules
+- Use functional components instead of class components.
+- Use hooks (`useState`, `useEffect`, etc.) instead of lifecycle methods.
+- Always enable TypeScript strict mode for better type safety.
+- Follow the DRY (Don't Repeat Yourself) principle.
+- Keep components small and focused on a single responsibility.
+
+## 2. Component Structure & Best Practices
+- Use PascalCase for component names (`MyComponent`).
+- Keep components modular and reusable.
+- Separate concerns by extracting utility functions outside components.
+- Use named exports for reusable components (`export function MyComponent() {}`).
+- Avoid deeply nested components; break them into smaller ones.
+- Use a folder structure like `components/`, `hooks/`, `utils/`, `pages/`.
+
+## 3. State Management
+- Use local component state (`useState`) when possible.
+- Use `useReducer` for complex state logic.
+- Use global state only when necessary (e.g., `Redux`).
+- Avoid unnecessary re-renders by memoizing (`React.memo`, `useMemo`, `useCallback`).
+
+## 4. Props & Data Handling
+- Use TypeScript interfaces or `PropTypes` to define component props.
+- Use defaultProps or default function parameters for optional props.
+- Use the spread operator (`{...props}`) carefully to avoid unnecessary re-renders.
+- Destructure props for better readability (`const { title, content } = props`).
+- Avoid passing unnecessary props to child components.
+
+## 5. Effects & Side Effects
+- Use `useEffect` for side effects (API calls, subscriptions, etc.).
+- Always provide a cleanup function in `useEffect` where necessary.
+- Avoid unnecessary dependencies in `useEffect` dependencies array.
+- Prefer `useMemo` over `useEffect` for computed values.
+
+## 6. Event Handling
+- Use event delegation when dealing with multiple child elements.
+- Pass event handlers as props instead of defining them inline.
+- Use `event.preventDefault()` and `event.stopPropagation()` appropriately.
+- Prefer using function expressions instead of arrow functions in JSX.
+
+## 7. Performance Optimization
+- Use `React.memo` to prevent unnecessary re-renders of pure components.
+- Use `useMemo` and `useCallback` to optimize expensive calculations.
+- Avoid unnecessary state updates that trigger re-renders.
+- Optimize large lists with `React.lazy` and `Suspense`.
+- Use `virtualized` lists (`react-window`, `react-virtualized`) for large datasets.
+
+## 8. Forms & Input Handling
+- Use controlled components (`useState`) for form inputs.
+- Prefer `React Hook Form` for complex forms.
+- Use `useRef` for accessing form elements instead of `document.querySelector()`.
+- Validate inputs on both client and server side.
+
+## 9. CSS & Styling
+- Use CSS Modules or styled-components instead of global styles.
+- Avoid inline styles; prefer styled-components or class-based styles.
+- Keep styles scoped to components when possible.
+
+## 10. Error Handling
+- Use Error Boundaries for catching UI errors (`componentDidCatch`).
+- Handle API errors gracefully and provide user-friendly messages.
+- Use `try...catch` blocks inside async functions.
+- Use fallback UI components for better user experience.
+
+## 11. Routing
+- Use `react-router-dom` for client-side navigation.
+- Prefer dynamic imports (`React.lazy`) for loading routes.
+- Use `useParams` to get URL parameters.
+- Avoid unnecessary re-renders by using `useMemo` in route-based components.
+
+## 12. API Calls & Data Fetching
+- Use `fetch`, `Axios`, or `react-query` for API calls.
+- Use `useEffect` with dependency arrays to fetch data only when needed.
+- Handle loading, success, and error states properly.
+- Cache API responses where applicable (`react-query`, localStorage`).
+
+## 13. Testing
+- Use Jest & React Testing Library for unit and integration testing.
+- Write tests for critical functionality.
+- Prefer testing behavior over implementation details.
+- Use `mockServiceWorker` (MSW) for mocking API responses.
+
+## 14. Security Best Practices
+- Avoid direct DOM manipulation; use React refs instead.
+- Escape user input to prevent XSS attacks.
+- Never store sensitive data in local storage.
+- Use environment variables for storing secrets (`process.env`).
