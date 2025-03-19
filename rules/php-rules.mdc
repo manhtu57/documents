@@ -1,0 +1,64 @@
+---
+description: 
+globs: *.php
+alwaysApply: false
+---
+# PHP Coding Rules
+
+## PHP
+- Use short echo syntax `<?= ?>` in **PHP 5.6** or later; otherwise, use standard `echo`.
+- Always enable `strict_types=1` at the beginning of PHP files to enforce strict type checking.
+- Strict mode when using `in_array()` function.
+- Use `NOWDOC` or `single quote` instead of `double quote`, `HEREDOC` for performance reasons.
+- Use PHPDoc for class, function, and variable annotations with simple and clear descriptions.
+- Use `bcmath` of PHP to avoid floating-point issues when performing calculations.
+- Use `SensitiveParameterValue` to store sensitive data to avoid backtrace leaks in **PHP 8.2** or later.
+- Ensure that data values are safely passed to JavaScript by using the `data-` attribute approach to separate concerns and prevent potential security vulnerabilities.
+- Avoid using the negation syntax `!` in conditional statements. Instead, use strict comparisons (`===`, `!==`) or alternative functions like `empty()` or `isset()`.
+- Use `password_hash()` and `password_verify()` for password security instead of manual hashing functions like `md5()` or `sha1()`.
+- Prefer `filter_var()` for sanitizing and validating user input instead of `strip_tags()` or `htmlspecialchars()`.
+- Use `json_encode()` and `json_decode()` instead of `serialize()` and `unserialize()` to prevent object injection vulnerabilities.
+- Avoid using `eval()`, `exec()`, `system()`, and `shell_exec()` unless absolutely necessary, as they introduce security risks.
+- Use `null coalescing operator (??)` and `ternary operator` to simplify conditional expressions.
+- Always handle exceptions using `try-catch` and avoid suppressing errors with `@`.
+
+## Symfony
+- Use `Attribute` instead of `Annotation` in **Symfony 6.x** or later.
+- Use `Dependency Injection` for service configuration instead of static access.
+- Configure environment variables via `.env` file instead of hardcoding credentials.
+- Use `Messenger` component for asynchronous processing instead of direct service calls.
+- Use `Serializer` component instead of `json_encode()` and `json_decode()` for structured object conversion.
+- Use `DTO` (Data Transfer Object) instead of passing raw request parameters directly to controllers.
+- Use `Custom Voters` for fine-grained authorization instead of handling permissions inside controllers.
+- Prefer `Repository` pattern to encapsulate database queries instead of querying directly inside controllers.
+- Use `Constraints` from Symfony Validator instead of manual input validation.
+
+## Codeigniter
+- Always enable CSRF protection in `config.php`.
+- Use `base_url()` and `site_url()` functions instead of hardcoding URLs.
+- Use `Query Builder` instead of raw SQL queries to prevent SQL Injection.
+- Load models via `$this->load->model()` instead of manually including files.
+- Use `Form Validation` library for input validation instead of handling it manually.
+- Use `XSS Filtering` in input validation to prevent cross-site scripting attacks.
+- Avoid storing session data in `$_SESSION`; use CodeIgniter’s session library instead.
+
+## Zend
+- Follow PSR-4 autoloading standards when structuring modules.
+- Use `Zend\Http\Client` for API requests instead of `file_get_contents()`.
+- Configure `Zend\Db\Sql\Sql` for query abstraction instead of writing raw SQL queries.
+- Always use `Zend\EventManager` for event-driven logic.
+- Use `Zend\Cache` for caching data instead of redundant database queries.
+- Prefer `Zend\Authentication` component for authentication handling instead of manually verifying user credentials.
+
+## ORM (Doctrine)
+- Avoid using the OR statement in the WHERE condition when querying through Doctrine as it may degrade performance.
+- Use transactions (`EntityManager::beginTransaction()`, `commit()`, `rollback()`) when handling multiple Create, Update, or Delete queries to ensure data integrity.
+- Use `SELECT` with specific fields instead of querying full entities when only partial data is needed to reduce memory usage.
+<!-- - Use `lazy loading` cautiously and prefer `eager loading` (`JOIN FETCH`) when fetching relationships to minimize excessive queries. -->
+<!-- - Utilize `Soft Deletes` by implementing a `deletedAt` field instead of permanently deleting records. -->
+- Ensure proper indexing on frequently queried columns to improve performance.
+- Use `batch processing` (`flush()` at intervals) for handling large datasets to improve performance and reduce memory consumption.
+<!-- - Prefer `UUID` or `ULID` over auto-incremented IDs to enhance scalability in distributed database environments. -->
+- Use `custom DQL functions` to optimize complex queries instead of writing raw SQL queries.
+- Prefer `EntityRepository` pattern for reusable query logic instead of directly using `EntityManager` for custom queries.
+- Use Doctrine Migrations to manage database schema changes instead of manually altering tables.
