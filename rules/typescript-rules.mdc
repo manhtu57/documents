@@ -1,0 +1,90 @@
+---
+description: 
+globs: *.ts
+alwaysApply: false
+---
+# TypeScript Coding Rules
+
+## 1. General Rules
+- Always enable `strict` mode in `tsconfig.json`.
+- Prefer `const` over `let` and avoid `var`.
+- Avoid using `any`; use explicit types instead.
+- Use `unknown` instead of `any` when type is uncertain.
+- Enable `noImplicitAny` to enforce strong typing.
+
+## 2. Type Annotations
+- Always specify function return types explicitly.
+- Prefer `interface` over `type` for object structures.
+- Use `readonly` for immutable properties.
+- Prefer `Record<K, V>` for dynamic object structures.
+- Use utility types (`Partial<T>`, `Readonly<T>`, etc.) when applicable.
+
+## 3. Functions
+- Use arrow functions for concise syntax.
+- Define function parameters with explicit types.
+- Use function overloads when multiple signatures are needed.
+- Avoid modifying function arguments; use rest parameters instead.
+
+## 4. Objects & Interfaces
+- Use `interface` for structured object types.
+- Prefer `extends` over duplication for interface inheritance.
+- Mark properties as optional only when truly necessary.
+
+## 5. Arrays & Tuples
+- Prefer `readonly T[]` instead of mutable arrays when modification is not needed.
+- Use tuples (`[string, number]`) for fixed-length arrays.
+- Prefer `map()`, `filter()`, and `reduce()` over manual loops.
+
+## 6. Classes
+- Use `private` and `protected` access modifiers where applicable.
+- Mark properties as `readonly` when modification is not needed.
+- Use `abstract` classes for base implementations.
+- Avoid excessive inheritance; prefer composition.
+
+## 7. Enums & Constants
+- Use `const enum` when possible for better performance.
+- Prefer union types (`'small' | 'medium' | 'large'`) over enums when possible.
+- Use `as const` for defining immutable object literals.
+
+## 8. Asynchronous Programming
+- Always use `async/await` instead of raw Promises.
+- Handle errors properly with `try...catch`.
+- Use `Promise.all()` for parallel execution.
+- Ensure `await` is used inside `try...catch` to prevent unhandled rejections.
+
+## 9. Error Handling
+- Use `Error` class for custom errors.
+- Avoid throwing plain strings (`throw 'Error'`); use `throw new Error()`.
+- Use `never` type for exhaustive switch cases.
+- Always define meaningful error messages.
+
+## 10. Code Style & Linting
+- Use ESLint with TypeScript rules enabled.
+- Follow a consistent indentation (2 or 4 spaces, avoid tabs).
+- Use semicolons consistently.
+- Prefer single quotes (`'`) for strings.
+- Remove `console.log` before deploying code.
+
+## 11. Security & Best Practices
+- Avoid `eval()` and dynamic `new Function()`.
+- Never expose sensitive information in frontend code.
+- Use environment variables for API keys and secrets.
+- Prefer `unknown` over `any` for better type safety.
+
+## 12. Performance Optimization
+- Avoid unnecessary type assertions (`as any`).
+- Use lazy loading (`import()`) for large modules.
+- Optimize loops and array operations.
+- Minimize re-renders in UI frameworks like React.
+
+## 13. Testing & Debugging
+- Use Jest or Mocha for unit testing.
+- Write tests for core logic and edge cases.
+- Prefer dependency injection for easier testing.
+- Leverage TypeScript's type system to catch errors early.
+
+## 14. Documentation & Readability
+- Use JSDoc (`/** */`) for documenting functions, interfaces, and classes.
+- Keep code modular and well-structured.
+- Use meaningful variable and function names.
+- Add `TODO` comments for pending improvements.
