@@ -1,0 +1,76 @@
+---
+description: 
+globs: *.js
+alwaysApply: false
+---
+# JavaScript Coding Rules
+
+## 1. General Rules
+- Always use `strict mode` (`'use strict';`).
+- Prefer `const` over `let`, and avoid `var`.
+- Use meaningful variable and function names.
+- Avoid global variables; use modules or closures instead.
+- Follow consistent indentation (2 or 4 spaces, avoid tabs).
+
+## 2. Variables & Data Types
+- Use meaningful variable names that clearly describe their purpose.
+- Use `const` for constants and `let` for variables that change.
+- Use camelCase for variable names (e.g., `firstName`, `calculateTotal`).
+- Use `===` and `!==` instead of `==` and `!=`.
+- Avoid using `null`, prefer `undefined` for missing values.
+- Use template literals (`` `Hello, ${name}` ``) instead of string concatenation.
+- Prefer `Number.isNaN()` over `isNaN()`.
+
+## 3. Functions
+- Prefer arrow functions (`()=>{}`) for concise syntax.
+- Use named functions instead of anonymous functions where possible.
+- Use function names that clearly describe the action the function performs (e.g., `getUserData`, `validateInput`).
+- Keep functions small and focused on a single task.
+- Use default parameters instead of checking for `undefined`.
+- Avoid modifying function arguments; use rest parameters instead.
+
+## 4. Objects & Arrays
+- Prefer `{}` to create objects and `[]` to create arrays.
+- Use object destructuring to extract values.
+- Prefer `map()`, `filter()`, and `reduce()` over `for` loops.
+- Use `Object.freeze(obj)` for immutable objects when needed.
+- Use `Array.isArray()` to check for arrays instead of `instanceof Array`.
+
+## 5. Asynchronous Programming
+- Use `async/await` instead of `.then()` and `.catch()`.
+- Always handle errors using `try...catch` when using `await`.
+- Use `Promise.all()` for parallel execution.
+- Avoid mixing callbacks with promises.
+
+## 6. Error Handling
+- Always handle exceptions properly.
+- Use `console.error()` or a logging library for error reporting.
+- Use `throw new Error()` instead of throwing strings.
+- Use `finally` for cleanup tasks in `try...catch` blocks.
+- Throw meaningful errors.
+
+## 7. Code Style
+- Follow a consistent naming convention (`camelCase` for variables, `PascalCase` for classes).
+- Use semicolons consistently.
+- Use single quotes (`'`) for strings unless escaping is needed.
+- Avoid unnecessary comments; write self-explanatory code.
+
+## 8. Security
+- Never use `eval()` or `Function()` constructor.
+- Escape user input to prevent XSS and SQL Injection.
+- Avoid exposing sensitive data in client-side code.
+- Use `Object.hasOwnProperty()` to check object properties.
+
+## 9. Performance Optimization
+- Use throttling/debouncing for expensive operations like scrolling.
+- Minimize DOM manipulations by batching changes.
+- Optimize loops and avoid redundant computations.
+- Use caching strategies for expensive calculations.
+
+## 10. Best Practices
+- Follow the DRY (Don't Repeat Yourself) principle.
+- Keep code modular and reusable.
+- Use ESLint to enforce coding standards.
+- Write unit tests for critical functions.
+- Use `import`/`export` for modular JavaScript code.
+- Remove `console.log` statements from production code.
